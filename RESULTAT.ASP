@@ -5,7 +5,7 @@
 <!-- #include file="kanin.css" -->
 <%
 Dim namn, antal, skytttar, totalt, F, T, C, O, post1, post2, post3, post4, post5, post6, post7, post8, post9, post0, plac
-fil = Server.MapPath("/phulip/kanin/high.cnt")
+fil = Server.MapPath("/phulip/spel/kanin/high.cnt")
 namn = Request.Form("namn")
 If namn = "" Then
 namn = "Okänd"

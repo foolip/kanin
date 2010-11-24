@@ -194,7 +194,7 @@ setTimeout("visaPatroner();", 800);
 }
 </SCRIPT>
 </HEAD>
-<BODY>
+<BODY onLoad="if(document.all){startkanin.style.visibility = 'visible';}">
 <BGSOUND ID="ljud">
 <BGSOUND SRC="traff.wav" VOLUME="-10000" LOOP=1>
 <BGSOUND SRC="miss.wav" VOLUME="-10000" LOOP=1>
@@ -209,7 +209,7 @@ När Magasinet är tomt så laddar du om genom att trycka på "Ladda Om"-knappen.
 <BR>Tiden är 100 sekunder och målet är såklart att skjuta så många kaniner som möjligt.
 Hur mycket tid som har gått ser du längst ner.
 <BR>Är du en duktig skytt så kanske du kommer med på High-Score listan.
-<BR><BR><B><CENTER>Skjut ihjäl den här kaninen för att börja.<BR>OBS! Vänta tills alla filer är laddade!</B></CENTER>
+<BR><BR><B><CENTER>Skjut ihjäl den här kaninen för att börja.<BR>OBS! Den syns inte förrens alla filer är laddade!</B></CENTER>
 </TD></TR>
 </TABLE>
 <TABLE ID="omladd" BORDER=1 CELLPADDING=0 CELLSPACING=0 BORDERCOLOR="#FFFFFF" STYLE="visibility:hidden;position:absolute;top:501;left:0;Cursor:crosshair;Z-index:1">
@@ -221,7 +221,7 @@ Hur mycket tid som har gått ser du längst ner.
 <TR><TD HEIGHT=0 WIDTH=500 COLSPAN=100></TD></TR>
 <TR HEIGHT=15><TD ID="s0"></TD><TD ID="s1"></TD><TD ID="s2"></TD><TD ID="s3"></TD><TD ID="s4"></TD><TD ID="s5"></TD><TD ID="s6"></TD><TD ID="s7"></TD><TD ID="s8"></TD><TD ID="s9"></TD><TD ID="s10"></TD><TD ID="s11"></TD><TD ID="s12"></TD><TD ID="s13"></TD><TD ID="s14"></TD><TD ID="s15"></TD><TD ID="s16"></TD><TD ID="s17"></TD><TD ID="s18"></TD><TD ID="s19"></TD><TD ID="s20"></TD><TD ID="s21"></TD><TD ID="s22"></TD><TD ID="s23"></TD><TD ID="s24"></TD><TD ID="s25"></TD><TD ID="s26"></TD><TD ID="s27"></TD><TD ID="s28"></TD><TD ID="s29"></TD><TD ID="s30"></TD><TD ID="s31"></TD><TD ID="s32"></TD><TD ID="s33"></TD><TD ID="s34"></TD><TD ID="s35"></TD><TD ID="s36"></TD><TD ID="s37"></TD><TD ID="s38"></TD><TD ID="s39"></TD><TD ID="s40"></TD><TD ID="s41"></TD><TD ID="s42"></TD><TD ID="s43"></TD><TD ID="s44"></TD><TD ID="s45"></TD><TD ID="s46"></TD><TD ID="s47"></TD><TD ID="s48"></TD><TD ID="s49"></TD><TD ID="s50"></TD><TD ID="s51"></TD><TD ID="s52"></TD><TD ID="s53"></TD><TD ID="s54"></TD><TD ID="s55"></TD><TD ID="s56"></TD><TD ID="s57"></TD><TD ID="s58"></TD><TD ID="s59"></TD><TD ID="s60"></TD><TD ID="s61"></TD><TD ID="s62"></TD><TD ID="s63"></TD><TD ID="s64"></TD><TD ID="s65"></TD><TD ID="s66"></TD><TD ID="s67"></TD><TD ID="s68"></TD><TD ID="s69"></TD><TD ID="s70"></TD><TD ID="s71"></TD><TD ID="s72"></TD><TD ID="s73"></TD><TD ID="s74"></TD><TD ID="s75"></TD><TD ID="s76"></TD><TD ID="s77"></TD><TD ID="s78"></TD><TD ID="s79"></TD><TD ID="s80"></TD><TD ID="s81"></TD><TD ID="s82"></TD><TD ID="s83"></TD><TD ID="s84"></TD><TD ID="s85"></TD><TD ID="s86"></TD><TD ID="s87"></TD><TD ID="s88"></TD><TD ID="s89"></TD><TD ID="s90"></TD><TD ID="s91"></TD><TD ID="s92"></TD><TD ID="s93"></TD><TD ID="s94"></TD><TD ID="s95"></TD><TD ID="s96"></TD><TD ID="s97"></TD><TD ID="s98"></TD><TD ID="s99"></TD></TR>
 </TABLE>
-<IMG SRC="startkanin.gif" ID="startkanin" STYLE="visibility:visible;position:absolute;left:145px;top:160px;Z-index:1">
+<IMG SRC="startkanin.gif" ID="startkanin" STYLE="visibility:hidden;position:absolute;left:145px;top:160px;Z-index:1">
 <IMG SRC="kaninbg.gif" ID="kaninbg" STYLE="visibility:hidden;position:absolute;top:1px;left:1px;Z-index:1">
 <IMG SRC="stubbkanin.gif" ID="stubbkanin" STYLE="visibility:hidden;position:absolute;left:115px;top:330px;Z-index:2">
 <IMG SRC="bakkanin.gif" ID="bakkanin" STYLE="visibility:hidden;position:absolute;left:220px;top:167px;Z-index:3">
