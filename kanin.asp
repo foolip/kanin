@@ -202,14 +202,14 @@ setTimeout("visaPatroner();", 800);
 <BGSOUND SRC="click.wav" VOLUME="-10000" LOOP=1>
 <TABLE ID="tabellen" BORDER=1 BORDERCOLOR="#FFFFFF" CELLSPACING=0 CELLPADDING=10 STYLE="position:absolute;top:0px;left:0px;Width:502px;Height:502px;Cursor:crosshair">
 <TR><TD VALIGN=top STYLE="Text-align:left;Z-index:0">
-<FONT STYLE="Font-size:12px;Font-weight:Bold"><CENTER>Du ska nu få jaga kanin en härlig höstdag.</CENTER></FONT>
-<BR>Ditt vapen är en grovkalibrig älgstudsare vars magasin rymmer 6 patroner.
-<BR>Du kan skjuta en gång i sekunden, återstående skott ser du nere i det högra hörnet.
-När Magasinet är tomt så laddar du om genom att trycka på "Ladda Om"-knappen.
-<BR>Tiden är 100 sekunder och målet är såklart att skjuta så många kaniner som möjligt.
-Hur mycket tid som har gått ser du längst ner.
-<BR>Är du en duktig skytt så kanske du kommer med på High-Score listan.
-<BR><BR><B><CENTER>Skjut ihjäl den här kaninen för att börja.<BR>OBS! Den syns inte förrens alla filer är laddade!</B></CENTER>
+<FONT STYLE="Font-size:12px;Font-weight:Bold"><CENTER>Du ska nu fÃ¥ jaga kanin en hÃ¤rlig hÃ¶stdag.</CENTER></FONT>
+<BR>Ditt vapen Ã¤r en grovkalibrig Ã¤lgstudsare vars magasin rymmer 6 patroner.
+<BR>Du kan skjuta en gÃ¥ng i sekunden, Ã¥terstÃ¥ende skott ser du nere i det hÃ¶gra hÃ¶rnet.
+NÃ¤r Magasinet Ã¤r tomt sÃ¥ laddar du om genom att trycka pÃ¥ "Ladda Om"-knappen.
+<BR>Tiden Ã¤r 100 sekunder och mÃ¥let Ã¤r sÃ¥klart att skjuta sÃ¥ mÃ¥nga kaniner som mÃ¶jligt.
+Hur mycket tid som har gÃ¥tt ser du lÃ¤ngst ner.
+<BR>Ã„r du en duktig skytt sÃ¥ kanske du kommer med pÃ¥ High-Score listan.
+<BR><BR><B><CENTER>Skjut ihjÃ¤l den hÃ¤r kaninen fÃ¶r att bÃ¶rja.<BR>OBS! Den syns inte fÃ¶rrens alla filer Ã¤r laddade!</B></CENTER>
 </TD></TR>
 </TABLE>
 <TABLE ID="omladd" BORDER=1 CELLPADDING=0 CELLSPACING=0 BORDERCOLOR="#FFFFFF" STYLE="visibility:hidden;position:absolute;top:501;left:0;Cursor:crosshair;Z-index:1">
@@ -243,11 +243,11 @@ Hur mycket tid som har gått ser du längst ner.
 <CENTER>
 <FONT STYLE="Font-size:12px;Font-weight:Bold"><CENTER>Resultat</CENTER></FONT>
 <CENTER>
-<BR>Hur står du dig i konkurensen?
+<BR>Hur stÃ¥r du dig i konkurensen?
 <BR>Skriv in ditt namn och se om
-<BR>du kom med på High-Score listan.
+<BR>du kom med pÃ¥ High-Score listan.
 <FORM METHOD="post" ACTION="resultat.asp">
-<INPUT TYPE="text" NAME=namn STYLE="Font-family:Verdana;Font-size:10px;Background:#204080;Color:#FFFFFF;Text-align:center" SIZE=30 MAXLENGTH=30 NAME="langd" VALUE="Ditt för- och efternamn">
+<INPUT TYPE="text" NAME=namn STYLE="Font-family:Verdana;Font-size:10px;Background:#204080;Color:#FFFFFF;Text-align:center" SIZE=30 MAXLENGTH=30 NAME="langd" VALUE="Ditt fÃ¶r- och efternamn">
 <TABLE ID="skickaruta" BORDER=1 CELLPADDING=0 CELLSPACING=0 BORDERCOLOR="#FFFFFF" STYLE="visibility:hidden;position:absolute;left:166;top:130;z-index:6">
 <TR><TD WIDTH=164 HEIGHT=15 STYLE="Background:#204060" onMouseOver="skickaruta2.style.visibility = 'visible'">
 - Registrera kaniner -

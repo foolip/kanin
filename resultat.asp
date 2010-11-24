@@ -8,9 +8,9 @@ Dim namn, antal, skytttar, totalt, F, T, C, O, post1, post2, post3, post4, post5
 fil = Server.MapPath("/phulip/spel/kanin/high.cnt")
 namn = Request.Form("namn")
 If namn = "" Then
-namn = "Okänd"
-ElseIf namn = "Ditt för- och efternamn" Then
-namn = "Okänd"
+namn = "OkÃ¤nd"
+ElseIf namn = "Ditt fÃ¶r- och efternamn" Then
+namn = "OkÃ¤nd"
 End If
 antal = Request.Form("antal")
 Set F = CreateObject("Scripting.FileSystemObject")
@@ -53,7 +53,7 @@ post2(0) = post1(0)
 post2(1) = post1(1)
 post1(0) = namn
 post1(1) = antal
-plac = "Du är den bästa kaninjägaren genom tiderna!"
+plac = "Du Ã¤r den bÃ¤sta kaninjÃ¤garen genom tiderna!"
 Else
 If antal > post2(1) Then
 post0(0) = post9(0)
@@ -74,7 +74,7 @@ post3(0) = post2(0)
 post3(1) = post2(1)
 post2(0) = namn
 post2(1) = antal
-plac = "Du är den näst bästa kaninjägaren genom tiderna!"
+plac = "Du Ã¤r den nÃ¤st bÃ¤sta kaninjÃ¤garen genom tiderna!"
 Else
 If antal > post3(1) Then
 post0(0) = post9(0)
@@ -93,7 +93,7 @@ post4(0) = post3(0)
 post4(1) = post3(1)
 post3(0) = namn
 post3(1) = antal
-plac = "Du är den tredje bästa kaninjägaren genom tiderna!"
+plac = "Du Ã¤r den tredje bÃ¤sta kaninjÃ¤garen genom tiderna!"
 Else
 If antal > post4(1) Then
 post0(0) = post9(0)
@@ -110,7 +110,7 @@ post5(0) = post4(0)
 post5(1) = post4(1)
 post4(0) = namn
 post4(1) = antal
-plac = "Du är den fjärde bästa kaninjägaren genom tiderna!"
+plac = "Du Ã¤r den fjÃ¤rde bÃ¤sta kaninjÃ¤garen genom tiderna!"
 Else
 If antal > post5(1) Then
 post0(0) = post9(0)
@@ -125,7 +125,7 @@ post6(0) = post5(0)
 post6(1) = post5(1)
 post5(0) = namn
 post5(1) = antal
-plac = "Du är den femte bästa kaninjägaren genom tiderna!"
+plac = "Du Ã¤r den femte bÃ¤sta kaninjÃ¤garen genom tiderna!"
 Else
 If antal > post6(1) Then
 post0(0) = post9(0)
@@ -138,7 +138,7 @@ post7(0) = post6(0)
 post7(1) = post6(1)
 post6(0) = namn
 post6(1) = antal
-plac = "Du är den sjätte bästa kaninjägaren genom tiderna!"
+plac = "Du Ã¤r den sjÃ¤tte bÃ¤sta kaninjÃ¤garen genom tiderna!"
 Else
 If antal > post7(1) Then
 post0(0) = post9(0)
@@ -149,7 +149,7 @@ post8(0) = post7(0)
 post8(1) = post7(1)
 post7(0) = namn
 post7(1) = antal
-plac = "Du är den sjunde bästa kaninjägaren genom tiderna!"
+plac = "Du Ã¤r den sjunde bÃ¤sta kaninjÃ¤garen genom tiderna!"
 Else
 If antal > post8(1) Then
 post0(0) = post9(0)
@@ -158,21 +158,21 @@ post9(0) = post8(0)
 post9(1) = post8(1)
 post8(0) = namn
 post8(1) = antal
-plac = "Du är den åttonde bästa kaninjägaren genom tiderna!"
+plac = "Du Ã¤r den Ã¥ttonde bÃ¤sta kaninjÃ¤garen genom tiderna!"
 Else
 If antal > post9(1) Then
 post0(0) = post9(0)
 post0(1) = post9(1)
 post9(0) = namn
 post9(1) = antal
-plac = "Du är den nionde bästa kaninjägaren genom tiderna!"
+plac = "Du Ã¤r den nionde bÃ¤sta kaninjÃ¤garen genom tiderna!"
 Else
 If antal > post0(1) Then
 post0(0) = namn
 post0(1) = antal
-plac = "Du är den tionde bästa kaninjägaren genom tiderna!"
+plac = "Du Ã¤r den tionde bÃ¤sta kaninjÃ¤garen genom tiderna!"
 Else
-plac = "Dessvärre kom du inte med på High-Score listan."
+plac = "DessvÃ¤rre kom du inte med pÃ¥ High-Score listan."
 End If
 End If
 End If
@@ -221,11 +221,11 @@ parent.close();
 <TR><TD VALIGN=top STYLE="Text-align:left;Z-index:0">
 <FONT STYLE="Font-size:12px;Font-weight:Bold"><CENTER>High-Scores</CENTER></FONT>
 <CENTER>
-<BR><B>Du sköt <% =antal %> kaniner, medel är <% =snitt %> st.
-<BR>Hittills har <% =total %> kaniner skjutits av <% =skyttar %> jägare.</B>
+<BR><B>Du skÃ¶t <% =antal %> kaniner, medel Ã¤r <% =snitt %> st.
+<BR>Hittills har <% =total %> kaniner skjutits av <% =skyttar %> jÃ¤gare.</B>
 <BR><BR>
 <TABLE BORDER=1 CELLPADDING=5 CELLSPACING=0 BORDERCOLOR="#FFFFFF" STYLE="width:400;height:200">
-<TR><TD STYLE="Background:#204060;text-align:left"><B>Jägare:</B></TD><TD STYLE="Background:#204060;text-align:right"><B>Kaniner:</B></TD></TR>
+<TR><TD STYLE="Background:#204060;text-align:left"><B>JÃ¤gare:</B></TD><TD STYLE="Background:#204060;text-align:right"><B>Kaniner:</B></TD></TR>
 <TR><TD STYLE="Background:#204060;text-align:left"><% =post1(0) %></TD><TD STYLE="Background:#204060;text-align:right"><% =post1(1) %></TD></TR>
 <TR><TD STYLE="Background:#204060;text-align:left"><% =post2(0) %></TD><TD STYLE="Background:#204060;text-align:right"><% =post2(1) %></TD></TR>
 <TR><TD STYLE="Background:#204060;text-align:left"><% =post3(0) %></TD><TD STYLE="Background:#204060;text-align:right"><% =post3(1) %></TD></TR>
