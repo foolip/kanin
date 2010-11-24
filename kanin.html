@@ -1,10 +1,10 @@
 <!doctype html>
-<HTML>
-<HEAD>
-<meta charset="UTF-8">
-<TITLE>Skjuta Kanin</TITLE>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Skjuta Kanin</title>
 <link rel="stylesheet" href="kanin.css">
-<SCRIPT LANGUAGE="JavaScript">
+<script language="javascript">
 farSkjuta = 1
 nr = 0
 kaniner = 0
@@ -135,8 +135,8 @@ resultat.style.visibility = 'visible';
 skickaruta.style.visibility = 'visible';
 document.forms[0].elements[1].value = kaniner;
 }
-</SCRIPT>
-<SCRIPT LANGUAGE="JavaScript" event=onmousedown for=startkanin>
+</script>
+<script language="javascript" event=onmousedown for=startkanin>
 startkanin.style.visibility = 'hidden';
 blod1.style.left = event.x - 50 + 'px';
 blod1.style.top = event.y - 50 + 'px';
@@ -159,26 +159,26 @@ setTimeout("eval(HideBlod3);", 300);
 playSound('traff.wav');
 setTimeout("starta();", 500);
 skjutInte();
-</SCRIPT>
-<SCRIPT LANGUAGE="JavaScript" event=onmousedown for=stubbkanin>
+</script>
+<script language="javascript" event=onmousedown for=stubbkanin>
 traff('stubbkanin');
-</SCRIPT>
-<SCRIPT LANGUAGE="JavaScript" event=onmousedown for=framkaninv>
+</script>
+<script language="javascript" event=onmousedown for=framkaninv>
 traff('framkaninv');
-</SCRIPT>
-<SCRIPT LANGUAGE="JavaScript" event=onmousedown for=framkaninh>
+</script>
+<script language="javascript" event=onmousedown for=framkaninh>
 traff('framkaninh');
-</SCRIPT>
-<SCRIPT LANGUAGE="JavaScript" event=onmousedown for=mellankaninv>
+</script>
+<script language="javascript" event=onmousedown for=mellankaninv>
 traff('mellankaninv');
-</SCRIPT>
-<SCRIPT LANGUAGE="JavaScript" event=onmousedown for=mellankaninh>
+</script>
+<script language="javascript" event=onmousedown for=mellankaninh>
 traff('mellankaninh');
-</SCRIPT>
-<SCRIPT LANGUAGE="JavaScript" event=onmousedown for=bakkanin>
+</script>
+<script language="javascript" event=onmousedown for=bakkanin>
 traff('bakkanin');
-</SCRIPT>
-<SCRIPT LANGUAGE="JavaScript" event=onmousedown for=kaninbg>
+</script>
+<script language="javascript" event=onmousedown for=kaninbg>
 if (farSkjuta == 1 & patroner > 0) {
 playSound('miss.wav');
 skjutInte();
@@ -187,82 +187,82 @@ gomPatron();
 else if (farSkjuta == 1 & patroner <= 0) {
 playSound('click.wav');
 }
-</SCRIPT>
-<SCRIPT LANGUAGE="JavaScript" event=onmousedown for=omladd>
+</script>
+<script language="javascript" event=onmousedown for=omladd>
 if (farSkjuta == '1') {
 playSound('ladda.wav');
 skjutInte();
 setTimeout("visaPatroner();", 800);
 }
-</SCRIPT>
-</HEAD>
-<BODY onLoad="if(document.all){startkanin.style.visibility = 'visible';}">
-<BGSOUND ID="ljud">
-<BGSOUND SRC="traff.wav" VOLUME="-10000" LOOP=1>
-<BGSOUND SRC="miss.wav" VOLUME="-10000" LOOP=1>
-<BGSOUND SRC="ladda.wav" VOLUME="-10000" LOOP=1>
-<BGSOUND SRC="click.wav" VOLUME="-10000" LOOP=1>
-<TABLE ID="tabellen" BORDER=1 BORDERCOLOR="#FFFFFF" CELLSPACING=0 CELLPADDING=10 STYLE="position:absolute;top:0px;left:0px;Width:502px;Height:502px;Cursor:crosshair">
-<TR><TD VALIGN=top STYLE="Text-align:left;Z-index:0">
-<FONT STYLE="Font-size:12px;Font-weight:Bold"><CENTER>Du ska nu få jaga kanin en härlig höstdag.</CENTER></FONT>
-<BR>Ditt vapen är en grovkalibrig älgstudsare vars magasin rymmer 6 patroner.
-<BR>Du kan skjuta en gång i sekunden, återstående skott ser du nere i det högra hörnet.
+</script>
+</head>
+<body onload="if(document.all){startkanin.style.visibility = 'visible';}">
+<bgsound id="ljud">
+<bgsound src="traff.wav" volume="-10000" loop=1>
+<bgsound src="miss.wav" volume="-10000" loop=1>
+<bgsound src="ladda.wav" volume="-10000" loop=1>
+<bgsound src="click.wav" volume="-10000" loop=1>
+<table id="tabellen" border=1 bordercolor="#ffffff" cellspacing=0 cellpadding=10 style="position:absolute;top:0px;left:0px;width:502px;height:502px;cursor:crosshair">
+<tr><td valign=top style="text-align:left;z-index:0">
+<font style="font-size:12px;font-weight:bold"><center>Du ska nu få jaga kanin en härlig höstdag.</center></font>
+<br>Ditt vapen är en grovkalibrig älgstudsare vars magasin rymmer 6 patroner.
+<br>Du kan skjuta en gång i sekunden, återstående skott ser du nere i det högra hörnet.
 När Magasinet är tomt så laddar du om genom att trycka på "Ladda Om"-knappen.
-<BR>Tiden är 100 sekunder och målet är såklart att skjuta så många kaniner som möjligt.
+<br>Tiden är 100 sekunder och målet är såklart att skjuta så många kaniner som möjligt.
 Hur mycket tid som har gått ser du längst ner.
-<BR>Är du en duktig skytt så kanske du kommer med på High-Score listan.
-<BR><BR><B><CENTER>Skjut ihjäl den här kaninen för att börja.<BR>OBS! Den syns inte förrens alla filer är laddade!</B></CENTER>
-</TD></TR>
-</TABLE>
-<TABLE ID="omladd" BORDER=1 CELLPADDING=0 CELLSPACING=0 BORDERCOLOR="#FFFFFF" STYLE="visibility:hidden;position:absolute;top:501;left:0;Cursor:crosshair;Z-index:1">
-<TR><TD WIDTH=500 HEIGHT=15 onMouseOver="this.className='tdColorOn'" onMouseOut="this.className='tdColorOff'">
+<br>Är du en duktig skytt så kanske du kommer med på High-Score listan.
+<br><br><b><center>Skjut ihjäl den här kaninen för att börja.<br>OBS! Den syns inte förrens alla filer är laddade!</b></center>
+</td></tr>
+</table>
+<table id="omladd" border=1 cellpadding=0 cellspacing=0 bordercolor="#ffffff" style="visibility:hidden;position:absolute;top:501;left:0;cursor:crosshair;z-index:1">
+<tr><td width=500 height=15 onmouseover="this.classname='tdcoloron'" onmouseout="this.classname='tdcoloroff'">
 - Ladda Om -
-</TD></TR>
-</TABLE>
-<TABLE ID="tid" BORDER=1 CELLPADDING=0 CELLSPACING=0 BORDERCOLOR="#FFFFFF" STYLE="visibility:hidden;position:absolute;top:516;left:0;Cursor:crosshair;Z-index:0">
-<TR><TD HEIGHT=0 WIDTH=500 COLSPAN=100></TD></TR>
-<TR HEIGHT=15><TD ID="s0"></TD><TD ID="s1"></TD><TD ID="s2"></TD><TD ID="s3"></TD><TD ID="s4"></TD><TD ID="s5"></TD><TD ID="s6"></TD><TD ID="s7"></TD><TD ID="s8"></TD><TD ID="s9"></TD><TD ID="s10"></TD><TD ID="s11"></TD><TD ID="s12"></TD><TD ID="s13"></TD><TD ID="s14"></TD><TD ID="s15"></TD><TD ID="s16"></TD><TD ID="s17"></TD><TD ID="s18"></TD><TD ID="s19"></TD><TD ID="s20"></TD><TD ID="s21"></TD><TD ID="s22"></TD><TD ID="s23"></TD><TD ID="s24"></TD><TD ID="s25"></TD><TD ID="s26"></TD><TD ID="s27"></TD><TD ID="s28"></TD><TD ID="s29"></TD><TD ID="s30"></TD><TD ID="s31"></TD><TD ID="s32"></TD><TD ID="s33"></TD><TD ID="s34"></TD><TD ID="s35"></TD><TD ID="s36"></TD><TD ID="s37"></TD><TD ID="s38"></TD><TD ID="s39"></TD><TD ID="s40"></TD><TD ID="s41"></TD><TD ID="s42"></TD><TD ID="s43"></TD><TD ID="s44"></TD><TD ID="s45"></TD><TD ID="s46"></TD><TD ID="s47"></TD><TD ID="s48"></TD><TD ID="s49"></TD><TD ID="s50"></TD><TD ID="s51"></TD><TD ID="s52"></TD><TD ID="s53"></TD><TD ID="s54"></TD><TD ID="s55"></TD><TD ID="s56"></TD><TD ID="s57"></TD><TD ID="s58"></TD><TD ID="s59"></TD><TD ID="s60"></TD><TD ID="s61"></TD><TD ID="s62"></TD><TD ID="s63"></TD><TD ID="s64"></TD><TD ID="s65"></TD><TD ID="s66"></TD><TD ID="s67"></TD><TD ID="s68"></TD><TD ID="s69"></TD><TD ID="s70"></TD><TD ID="s71"></TD><TD ID="s72"></TD><TD ID="s73"></TD><TD ID="s74"></TD><TD ID="s75"></TD><TD ID="s76"></TD><TD ID="s77"></TD><TD ID="s78"></TD><TD ID="s79"></TD><TD ID="s80"></TD><TD ID="s81"></TD><TD ID="s82"></TD><TD ID="s83"></TD><TD ID="s84"></TD><TD ID="s85"></TD><TD ID="s86"></TD><TD ID="s87"></TD><TD ID="s88"></TD><TD ID="s89"></TD><TD ID="s90"></TD><TD ID="s91"></TD><TD ID="s92"></TD><TD ID="s93"></TD><TD ID="s94"></TD><TD ID="s95"></TD><TD ID="s96"></TD><TD ID="s97"></TD><TD ID="s98"></TD><TD ID="s99"></TD></TR>
-</TABLE>
-<IMG SRC="startkanin.gif" ID="startkanin" STYLE="visibility:hidden;position:absolute;left:145px;top:160px;Z-index:1">
-<IMG SRC="kaninbg.gif" ID="kaninbg" STYLE="visibility:hidden;position:absolute;top:1px;left:1px;Z-index:1">
-<IMG SRC="stubbkanin.gif" ID="stubbkanin" STYLE="visibility:hidden;position:absolute;left:115px;top:330px;Z-index:2">
-<IMG SRC="bakkanin.gif" ID="bakkanin" STYLE="visibility:hidden;position:absolute;left:220px;top:167px;Z-index:3">
-<IMG SRC="mellankaninv.gif" ID="mellankaninv" STYLE="visibility:hidden;position:absolute;left:29px;top:255px;Z-index:2">
-<IMG SRC="mellankaninh.gif" ID="mellankaninh" STYLE="visibility:hidden;position:absolute;left:110px;top:240px;Z-index:2">
-<IMG SRC="framkaninv.gif" ID="framkaninv" STYLE="visibility:hidden;position:absolute;left:263px;top:342px;Z-index:2">
-<IMG SRC="framkaninh.gif" ID="framkaninh" STYLE="visibility:hidden;position:absolute;left:373px;top:310px;Z-index:2">
-<IMG SRC="patron.gif" ID="p6" STYLE="visibility:hidden;position:absolute;top:441;left:421;z-index:4">
-<IMG SRC="patron.gif" ID="p5" STYLE="visibility:hidden;position:absolute;top:441;left:433;z-index:4">
-<IMG SRC="patron.gif" ID="p4" STYLE="visibility:hidden;position:absolute;top:441;left:445;z-index:4">
-<IMG SRC="patron.gif" ID="p3" STYLE="visibility:hidden;position:absolute;top:441;left:457;z-index:4">
-<IMG SRC="patron.gif" ID="p2" STYLE="visibility:hidden;position:absolute;top:441;left:469;z-index:4">
-<IMG SRC="patron.gif" ID="p1" STYLE="visibility:hidden;position:absolute;top:441;left:481;z-index:4">
-<IMG SRC="blod1.gif" ID="blod1" STYLE="visibility:hidden;position:absolute;top:0px;left:0px;Z-index:3">
-<IMG SRC="blod2.gif" ID="blod2" STYLE="visibility:hidden;position:absolute;top:0px;left:0px;Z-index:3">
-<IMG SRC="blod3.gif" ID="blod3" STYLE="visibility:hidden;position:absolute;top:0px;left:0px;Z-index:3">
-<TABLE ID="resultat" BORDER=1 BORDERCOLOR="#FFFFFF" CELLSPACING=0 CELLPADDING=10 STYLE="visibility:hidden;position:absolute;top:0px;left:0px;Width:502px;Height:502px;z-index:5;Cursor:crosshair">
-<TR><TD VALIGN=top STYLE="Text-align:left">
-<CENTER>
-<FONT STYLE="Font-size:12px;Font-weight:Bold"><CENTER>Resultat</CENTER></FONT>
-<CENTER>
-<BR>Hur står du dig i konkurensen?
-<BR>Skriv in ditt namn och se om
-<BR>du kom med på High-Score listan.
-<FORM METHOD="post" ACTION="resultat.asp">
-<INPUT TYPE="text" NAME=namn STYLE="Font-family:Verdana;Font-size:10px;Background:#204080;Color:#FFFFFF;Text-align:center" SIZE=30 MAXLENGTH=30 NAME="langd" VALUE="Ditt för- och efternamn">
-<TABLE ID="skickaruta" BORDER=1 CELLPADDING=0 CELLSPACING=0 BORDERCOLOR="#FFFFFF" STYLE="visibility:hidden;position:absolute;left:166;top:130;z-index:6">
-<TR><TD WIDTH=164 HEIGHT=15 STYLE="Background:#204060" onMouseOver="skickaruta2.style.visibility = 'visible'">
+</td></tr>
+</table>
+<table id="tid" border=1 cellpadding=0 cellspacing=0 bordercolor="#ffffff" style="visibility:hidden;position:absolute;top:516;left:0;cursor:crosshair;z-index:0">
+<tr><td height=0 width=500 colspan=100></td></tr>
+<tr height=15><td id="s0"></td><td id="s1"></td><td id="s2"></td><td id="s3"></td><td id="s4"></td><td id="s5"></td><td id="s6"></td><td id="s7"></td><td id="s8"></td><td id="s9"></td><td id="s10"></td><td id="s11"></td><td id="s12"></td><td id="s13"></td><td id="s14"></td><td id="s15"></td><td id="s16"></td><td id="s17"></td><td id="s18"></td><td id="s19"></td><td id="s20"></td><td id="s21"></td><td id="s22"></td><td id="s23"></td><td id="s24"></td><td id="s25"></td><td id="s26"></td><td id="s27"></td><td id="s28"></td><td id="s29"></td><td id="s30"></td><td id="s31"></td><td id="s32"></td><td id="s33"></td><td id="s34"></td><td id="s35"></td><td id="s36"></td><td id="s37"></td><td id="s38"></td><td id="s39"></td><td id="s40"></td><td id="s41"></td><td id="s42"></td><td id="s43"></td><td id="s44"></td><td id="s45"></td><td id="s46"></td><td id="s47"></td><td id="s48"></td><td id="s49"></td><td id="s50"></td><td id="s51"></td><td id="s52"></td><td id="s53"></td><td id="s54"></td><td id="s55"></td><td id="s56"></td><td id="s57"></td><td id="s58"></td><td id="s59"></td><td id="s60"></td><td id="s61"></td><td id="s62"></td><td id="s63"></td><td id="s64"></td><td id="s65"></td><td id="s66"></td><td id="s67"></td><td id="s68"></td><td id="s69"></td><td id="s70"></td><td id="s71"></td><td id="s72"></td><td id="s73"></td><td id="s74"></td><td id="s75"></td><td id="s76"></td><td id="s77"></td><td id="s78"></td><td id="s79"></td><td id="s80"></td><td id="s81"></td><td id="s82"></td><td id="s83"></td><td id="s84"></td><td id="s85"></td><td id="s86"></td><td id="s87"></td><td id="s88"></td><td id="s89"></td><td id="s90"></td><td id="s91"></td><td id="s92"></td><td id="s93"></td><td id="s94"></td><td id="s95"></td><td id="s96"></td><td id="s97"></td><td id="s98"></td><td id="s99"></td></tr>
+</table>
+<img src="startkanin.gif" id="startkanin" style="visibility:hidden;position:absolute;left:145px;top:160px;z-index:1">
+<img src="kaninbg.gif" id="kaninbg" style="visibility:hidden;position:absolute;top:1px;left:1px;z-index:1">
+<img src="stubbkanin.gif" id="stubbkanin" style="visibility:hidden;position:absolute;left:115px;top:330px;z-index:2">
+<img src="bakkanin.gif" id="bakkanin" style="visibility:hidden;position:absolute;left:220px;top:167px;z-index:3">
+<img src="mellankaninv.gif" id="mellankaninv" style="visibility:hidden;position:absolute;left:29px;top:255px;z-index:2">
+<img src="mellankaninh.gif" id="mellankaninh" style="visibility:hidden;position:absolute;left:110px;top:240px;z-index:2">
+<img src="framkaninv.gif" id="framkaninv" style="visibility:hidden;position:absolute;left:263px;top:342px;z-index:2">
+<img src="framkaninh.gif" id="framkaninh" style="visibility:hidden;position:absolute;left:373px;top:310px;z-index:2">
+<img src="patron.gif" id="p6" style="visibility:hidden;position:absolute;top:441;left:421;z-index:4">
+<img src="patron.gif" id="p5" style="visibility:hidden;position:absolute;top:441;left:433;z-index:4">
+<img src="patron.gif" id="p4" style="visibility:hidden;position:absolute;top:441;left:445;z-index:4">
+<img src="patron.gif" id="p3" style="visibility:hidden;position:absolute;top:441;left:457;z-index:4">
+<img src="patron.gif" id="p2" style="visibility:hidden;position:absolute;top:441;left:469;z-index:4">
+<img src="patron.gif" id="p1" style="visibility:hidden;position:absolute;top:441;left:481;z-index:4">
+<img src="blod1.gif" id="blod1" style="visibility:hidden;position:absolute;top:0px;left:0px;z-index:3">
+<img src="blod2.gif" id="blod2" style="visibility:hidden;position:absolute;top:0px;left:0px;z-index:3">
+<img src="blod3.gif" id="blod3" style="visibility:hidden;position:absolute;top:0px;left:0px;z-index:3">
+<table id="resultat" border=1 bordercolor="#ffffff" cellspacing=0 cellpadding=10 style="visibility:hidden;position:absolute;top:0px;left:0px;width:502px;height:502px;z-index:5;cursor:crosshair">
+<tr><td valign=top style="text-align:left">
+<center>
+<font style="font-size:12px;font-weight:bold"><center>Resultat</center></font>
+<center>
+<br>Hur står du dig i konkurensen?
+<br>Skriv in ditt namn och se om
+<br>du kom med på High-Score listan.
+<form method="post" action="resultat.asp">
+<input type="text" name=namn style="font-family:verdana;font-size:10px;background:#204080;color:#ffffff;text-align:center" size=30 maxlength=30 name="langd" value="ditt för- och efternamn">
+<table id="skickaruta" border=1 cellpadding=0 cellspacing=0 bordercolor="#ffffff" style="visibility:hidden;position:absolute;left:166;top:130;z-index:6">
+<tr><td width=164 height=15 style="background:#204060" onmouseover="skickaruta2.style.visibility = 'visible'">
 - Registrera kaniner -
-</TABLE>
-<TABLE BORDER=1 ID="skickaruta2" CELLPADDING=0 CELLSPACING=0 BORDERCOLOR="#FFFFFF" STYLE="visibility:hidden;position:absolute;left:166;top:130;z-index:7">
-<TR><TD WIDTH=164 HEIGHT=15 STYLE="Background:#204080" onMouseOut="skickaruta2.style.visibility = 'hidden'" onClick="document.forms[0].submit();">
+</table>
+<table border=1 id="skickaruta2" cellpadding=0 cellspacing=0 bordercolor="#ffffff" style="visibility:hidden;position:absolute;left:166;top:130;z-index:7">
+<tr><td width=164 height=15 style="background:#204080" onmouseout="skickaruta2.style.visibility = 'hidden'" onclick="document.forms[0].submit();">
 - Registrera kaniner -
-</TABLE>
-<BR>
-<INPUT TYPE="text" NAME=antal STYLE="visibility:hidden">
-</FORM>
-</CENTER>
-</TD></TR>
-</TABLE>
-</BODY>
-</HTML>
+</table>
+<br>
+<input type="text" name=antal style="visibility:hidden">
+</form>
+</center>
+</td></tr>
+</table>
+</body>
+</html>
