@@ -1,9 +1,46 @@
-body {
-  background:#101040;
-  color:#ffffff;
-  font-family:verdana;
-  font-size:12px;
-  margin:0px;
+html, body {
+  background: #101040;
+  color: white;
+  font-family: verdana;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  cursor: crosshair;
+}
+
+#box {
+  border: 1px solid white;
+  background: #102040;
+  margin: 0;
+  padding: 0;
+  width: 500px;
+  height: 500px;
+}
+
+#introduction {
+  margin: 10px;
+  font-size: 10px;
+  text-align: left;
+}
+
+#startkanin {
+ visibility: hidden;
+ position: absolute;
+ left: 145px;
+ top: 185px;
+}
+
+#reload {
+  border: 1px solid white;
+  width: 502px;
+  height: 15px;
+  background: #102040;
+  color: white;
+  font-size: 10px;
+}
+
+#reload:hover {
+  background:#204080;
 }
 
 a {
@@ -25,12 +62,4 @@ td {
 
 img {
   cursor:crosshair;
-}
-
-.tdcoloron {
-  background:#204080;
-}
-
-.tdcoloroff {
-  background:#102040;
 }

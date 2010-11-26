@@ -8,7 +8,7 @@ function playSound(fil) {
 
 function starta() {
   kaninbg.style.visibility = 'visible';
-  omladd.style.visibility = 'visible';
+  reload.style.visibility = 'visible';
   tid.style.visibility = 'visible';
   visaPatroner();
   tagTid();
@@ -123,14 +123,14 @@ function traff(event) {
 }
 
 function slut() {
-  omladd.style.visibility = 'hidden';
+  reload.style.visibility = 'hidden';
   tid.style.visibility = 'hidden';
   resultat.style.visibility = 'visible';
   skickaruta.style.visibility = 'visible';
   document.forms[0].elements[1].value = kaniner;
 }
 
-startkanin.onmousedown = function() {
+function start() {
   startkanin.style.visibility = 'hidden';
   blod1.style.left = event.x - 50 + 'px';
   blod1.style.top = event.y - 50 + 'px';
@@ -153,8 +153,9 @@ startkanin.onmousedown = function() {
   playSound('traff.wav');
   setTimeout("starta();", 500);
   skjutInte();
-};
+}
 
+startkanin.onmousedown = start;
 stubbkanin.onmousedown = traff;
 framkaninv.onmousedown = traff;
 framkaninh.onmousedown = traff;
@@ -172,7 +173,7 @@ kaninbg.onmousedown = function() {
   }
 };
 
-omladd.onmousedown = function() {
+reload.onmousedown = function() {
   if (farSkjuta == '1') {
     playSound('ladda.wav');
     skjutInte();

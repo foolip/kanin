@@ -12,9 +12,10 @@
 <bgsound src="ladda.wav" volume="-10000" loop=1>
 <bgsound src="click.wav" volume="-10000" loop=1>
 
+<div id="box">
+
 <!-- introduction -->
-<table id="tabellen" border=1 bordercolor="#ffffff" cellspacing=0 cellpadding=10 style="position:absolute;top:0px;left:0px;width:502px;height:502px;cursor:crosshair">
-<tr><td valign=top style="text-align:left;z-index:0">
+<div id="introduction">
 <font style="font-size:12px;font-weight:bold"><center>Du ska nu få jaga kanin en härlig höstdag.</center></font>
 <br>Ditt vapen är en grovkalibrig älgstudsare vars magasin rymmer 6 patroner.
 <br>Du kan skjuta en gång i sekunden, återstående skott ser du nere i det högra hörnet.
@@ -23,15 +24,13 @@ När Magasinet är tomt så laddar du om genom att trycka på "Ladda Om"-knappen
 Hur mycket tid som har gått ser du längst ner.
 <br>Är du en duktig skytt så kanske du kommer med på High-Score listan.
 <br><br><b><center>Skjut ihjäl den här kaninen för att börja.<br>OBS! Den syns inte förrens alla filer är laddade!</b></center>
-</td></tr>
-</table>
+<img src="startkanin.gif" id="startkanin">
+</div>
+
+</div>
 
 <!-- reload -->
-<table id="omladd" border=1 cellpadding=0 cellspacing=0 bordercolor="#ffffff" style="visibility:hidden;position:absolute;top:501;left:0;cursor:crosshair;z-index:1">
-<tr><td width=500 height=15 onmouseover="this.classname='tdcoloron'" onmouseout="this.classname='tdcoloroff'">
-- Ladda Om -
-</td></tr>
-</table>
+<button id="reload">- Ladda Om -</button>
 
 <!-- countdown -->
 <table id="tid" border=1 cellpadding=0 cellspacing=0 bordercolor="#ffffff" style="visibility:hidden;position:absolute;top:516;left:0;cursor:crosshair;z-index:0">
@@ -40,7 +39,6 @@ Hur mycket tid som har gått ser du längst ner.
 </table>
 
 <!-- bunnies -->
-<img src="startkanin.gif" id="startkanin" style="visibility:hidden;position:absolute;left:145px;top:160px;z-index:1">
 <img src="kaninbg.gif" id="kaninbg" style="visibility:hidden;position:absolute;top:1px;left:1px;z-index:1">
 <img src="stubbkanin.gif" id="stubbkanin" style="visibility:hidden;position:absolute;left:115px;top:330px;z-index:2">
 <img src="bakkanin.gif" id="bakkanin" style="visibility:hidden;position:absolute;left:220px;top:167px;z-index:3">
