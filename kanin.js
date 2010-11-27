@@ -123,9 +123,8 @@ function traff(event) {
 function slut() {
   reload.style.visibility = 'hidden';
   countdown.style.visibility = 'hidden';
-  resultat.style.visibility = 'visible';
-  skickaruta.style.visibility = 'visible';
-  document.forms[0].elements[1].value = kaniner;
+  results.style.visibility = 'visible';
+  antal.value = kaniner;
 }
 
 function start() {

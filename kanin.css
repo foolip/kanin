@@ -8,7 +8,8 @@ html, body {
   cursor: crosshair;
 }
 
-#box {
+.box {
+  position: absolute;
   border: 1px solid white;
   background: #102040;
   margin: 0;
@@ -17,10 +18,39 @@ html, body {
   height: 500px;
 }
 
+/* introduction */
+
 #introduction {
-  margin: 10px;
   font-size: 10px;
   text-align: left;
+}
+
+/* the game */
+
+#game {
+  height: 532px;
+}
+
+#game img {
+  display: block;
+  margin: 0;
+}
+
+.bunny, .ammo, .blood {
+  position: absolute;
+  visibility: hidden;
+}
+
+.bunny {
+  z-index: 2;
+}
+
+.blood {
+  z-index: 3;
+}
+
+.ammo {
+  z-index: 4;
 }
 
 #startkanin {
@@ -31,9 +61,12 @@ html, body {
 }
 
 #reload {
-  border: 1px solid white;
-  width: 502px;
-  height: 15px;
+  display: block;
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: white;
+  width: 100%;
+  height: 17px;
   background: #102040;
   color: white;
   font-size: 10px;
@@ -44,8 +77,7 @@ html, body {
 }
 
 #countdown {
-  border: 1px solid white;
-  width: 500px;
+  width: 100%;
   height: 15px;
   background: #102040;
 }
@@ -54,6 +86,22 @@ html, body {
   background: #204080;
   width: 0%;
   height: 15px;
+}
+
+/* results */
+
+#results {
+  visibility: hidden;
+}
+
+#submit {
+  border: 1px outset white;
+  color: white;
+  background: #204060;
+}
+
+#submit:hover {
+  background: #204080;
 }
 
 a {
@@ -70,5 +118,20 @@ table {
 td {
   border-width: 0;
   background: #102040;
+  text-align: center;
+}
+
+h1 {
+  margin: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+
+p {
+  margin: 10px;
+}
+
+.center {
   text-align: center;
 }

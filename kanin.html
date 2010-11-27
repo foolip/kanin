@@ -12,76 +12,72 @@
 <bgsound src="ladda.wav" volume="-10000" loop=1>
 <bgsound src="click.wav" volume="-10000" loop=1>
 
-<div id="box">
-
 <!-- introduction -->
-<div id="introduction">
-<font style="font-size:12px;font-weight:bold"><center>Du ska nu få jaga kanin en härlig höstdag.</center></font>
-<br>Ditt vapen är en grovkalibrig älgstudsare vars magasin rymmer 6 patroner.
+<div class="box" id="introduction">
+<h1>Du ska nu få jaga kanin en härlig höstdag.</h1>
+<p>Ditt vapen är en grovkalibrig älgstudsare vars magasin rymmer 6 patroner.
 <br>Du kan skjuta en gång i sekunden, återstående skott ser du nere i det högra hörnet.
 När Magasinet är tomt så laddar du om genom att trycka på "Ladda Om"-knappen.
 <br>Tiden är 100 sekunder och målet är såklart att skjuta så många kaniner som möjligt.
 Hur mycket tid som har gått ser du längst ner.
 <br>Är du en duktig skytt så kanske du kommer med på High-Score listan.
-<br><br><b><center>Skjut ihjäl den här kaninen för att börja.<br>OBS! Den syns inte förrens alla filer är laddade!</b></center>
+<p style="text-align: center; font-weight: bold;">Skjut ihjäl den här kaninen för att börja.<br>
+OBS! Den syns inte förrens alla filer är laddade!
+</p>
 <img src="startkanin.gif" id="startkanin">
 </div>
 
-</div>
+<!-- the game -->
+<div class="box" id="game">
+
+<!-- background -->
+<img src="kaninbg.gif" id="kaninbg">
+
+<!-- bunnies -->
+<img class="bunny" src="stubbkanin.gif" id="stubbkanin" style="left:114px;top:329px;">
+<img class="bunny" src="bakkanin.gif" id="bakkanin" style="left:219px;top:166px;">
+<img class="bunny" src="mellankaninv.gif" id="mellankaninv" style="left:28px;top:254px;">
+<img class="bunny" src="mellankaninh.gif" id="mellankaninh" style="left:109px;top:239px;">
+<img class="bunny" src="framkaninv.gif" id="framkaninv" style="left:262px;top:341px;">
+<img class="bunny" src="framkaninh.gif" id="framkaninh" style="left:372px;top:309px;">
+
+<!-- rifle cartridges -->
+<img class="ammo" src="patron.gif" id="p6" style="top:440px;left:420px;">
+<img class="ammo" src="patron.gif" id="p5" style="top:440px;left:432px;">
+<img class="ammo" src="patron.gif" id="p4" style="top:440px;left:444px;">
+<img class="ammo" src="patron.gif" id="p3" style="top:440px;left:456px;">
+<img class="ammo" src="patron.gif" id="p2" style="top:440px;left:468px;">
+<img class="ammo" src="patron.gif" id="p1" style="top:440px;left:480px;">
+
+<!-- blood -->
+<img class="blood" src="blod1.gif" id="blod1" style="top:0px;left:0px;">
+<img class="blood" src="blod2.gif" id="blod2" style="top:0px;left:0px;">
+<img class="blood" src="blod3.gif" id="blod3" style="top:0px;left:0px;">
 
 <!-- reload -->
 <button id="reload">- Ladda Om -</button>
 
 <!-- countdown -->
-<div id="countdown">
-<div id="progress"></div>
+<div id="countdown"><div id="progress"></div></div>
+
 </div>
 
-<!-- bunnies -->
-<img src="kaninbg.gif" id="kaninbg" style="visibility:hidden;position:absolute;top:1px;left:1px;z-index:1">
-<img src="stubbkanin.gif" id="stubbkanin" style="visibility:hidden;position:absolute;left:115px;top:330px;z-index:2">
-<img src="bakkanin.gif" id="bakkanin" style="visibility:hidden;position:absolute;left:220px;top:167px;z-index:3">
-<img src="mellankaninv.gif" id="mellankaninv" style="visibility:hidden;position:absolute;left:29px;top:255px;z-index:2">
-<img src="mellankaninh.gif" id="mellankaninh" style="visibility:hidden;position:absolute;left:110px;top:240px;z-index:2">
-<img src="framkaninv.gif" id="framkaninv" style="visibility:hidden;position:absolute;left:263px;top:342px;z-index:2">
-<img src="framkaninh.gif" id="framkaninh" style="visibility:hidden;position:absolute;left:373px;top:310px;z-index:2">
-
-<!-- rifle cartridges -->
-<img src="patron.gif" id="p6" style="visibility:hidden;position:absolute;top:441px;left:421px;z-index:4">
-<img src="patron.gif" id="p5" style="visibility:hidden;position:absolute;top:441px;left:433px;z-index:4">
-<img src="patron.gif" id="p4" style="visibility:hidden;position:absolute;top:441px;left:445px;z-index:4">
-<img src="patron.gif" id="p3" style="visibility:hidden;position:absolute;top:441px;left:457px;z-index:4">
-<img src="patron.gif" id="p2" style="visibility:hidden;position:absolute;top:441px;left:469px;z-index:4">
-<img src="patron.gif" id="p1" style="visibility:hidden;position:absolute;top:441px;left:481px;z-index:4">
-<img src="blod1.gif" id="blod1" style="visibility:hidden;position:absolute;top:0px;left:0px;z-index:3">
-<img src="blod2.gif" id="blod2" style="visibility:hidden;position:absolute;top:0px;left:0px;z-index:3">
-<img src="blod3.gif" id="blod3" style="visibility:hidden;position:absolute;top:0px;left:0px;z-index:3">
-
 <!-- results -->
-<table id="resultat" border=1 bordercolor="#ffffff" cellspacing=0 cellpadding=10 style="visibility:hidden;position:absolute;top:0px;left:0px;width:502px;height:502px;z-index:5;cursor:crosshair">
-<tr><td valign=top style="text-align:left">
-<center>
-<font style="font-size:12px;font-weight:bold"><center>Resultat</center></font>
-<center>
-<br>Hur står du dig i konkurensen?
-<br>Skriv in ditt namn och se om
-<br>du kom med på High-Score listan.
-<form method="post" action="resultat.asp">
-<input type="text" name=namn style="font-family:verdana;font-size:10px;background:#204080;color:#ffffff;text-align:center" size=30 maxlength=30 name="langd" value="ditt för- och efternamn">
-<table id="skickaruta" border=1 cellpadding=0 cellspacing=0 bordercolor="#ffffff" style="visibility:hidden;position:absolute;left:166px;top:130px;z-index:6">
-<tr><td width=164 height=15 style="background:#204060" onmouseover="skickaruta2.style.visibility = 'visible'">
-- Registrera kaniner -
-</table>
-<table border=1 id="skickaruta2" cellpadding=0 cellspacing=0 bordercolor="#ffffff" style="visibility:hidden;position:absolute;left:166px;top:130px;z-index:7">
-<tr><td width=164 height=15 style="background:#204080" onmouseout="skickaruta2.style.visibility = 'hidden'" onclick="document.forms[0].submit();">
-- Registrera kaniner -
-</table>
-<br>
-<input type="text" name=antal style="visibility:hidden">
+<div class="box" id="results">
+<h1>Resultat</h1>
+
+<p class="center">
+Hur står du dig i konkurensen?<br>
+Skriv in ditt namn och se om<br>
+du kom med på High-Score listan.
+
+<form class="center" method="post" action="resultat.asp">
+<input type="text" name="namn" style="font-family:verdana;font-size:10px;background:#204080;color:#ffffff;text-align:center" size=30 maxlength=30 name="langd" value="ditt för- och efternamn">
+<p><input id="submit" type="submit" value="- Registrera kaniner -">
+<input type="hidden" name=antal>
 </form>
-</center>
-</td></tr>
-</table>
+</div>
+
 <script src="kanin.js"></script>
 </body>
 </html>
