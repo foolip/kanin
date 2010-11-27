@@ -7,9 +7,7 @@ function playSound(fil) {
 }
 
 function starta() {
-  kaninbg.style.visibility = 'visible';
-  reload.style.visibility = 'visible';
-  countdown.style.visibility = 'visible';
+  game.style.visibility = 'visible';
   visaPatroner();
   tagTid();
   visaKaniner();

@@ -1,14 +1,14 @@
-html, body {
+body {
   background: #101040;
   color: white;
   font-family: verdana;
   font-size: 12px;
   margin: 0;
   padding: 0;
-  cursor: crosshair;
 }
 
 .box {
+  visibility: hidden;
   position: absolute;
   border: 1px solid white;
   background: #102040;
@@ -16,11 +16,13 @@ html, body {
   padding: 0;
   width: 500px;
   height: 500px;
+  cursor: crosshair;
 }
 
 /* introduction */
 
 #introduction {
+  visibility: visible;
   font-size: 10px;
   text-align: left;
 }
