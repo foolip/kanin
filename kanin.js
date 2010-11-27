@@ -1,6 +1,7 @@
 var farSkjuta = 1;
 var nr = 0;
 var kaniner = 0;
+var ammo = 6;
 
 function show(elm) {
   elm.style.visibility = 'visible';
@@ -38,26 +39,21 @@ function playSound(fil) {
 }
 
 function starta() {
-  game.style.visibility = 'visible';
-  visaPatroner();
+  hide(introduction);
+  show(game);
+  showAmmo();
   tagTid();
   visaKaniner();
 }
 
-function visaPatroner() {
-  p1.style.visibility = 'visible';
-  p2.style.visibility = 'visible';
-  p3.style.visibility = 'visible';
-  p4.style.visibility = 'visible';
-  p5.style.visibility = 'visible';
-  p6.style.visibility = 'visible';
-  patroner = 6;
-}
-
-function gomPatron() {
-  var gom = "p" + patroner +".style.visibility = 'hidden';";
-  eval(gom);
-  patroner = patroner - 1;
+function showAmmo() {
+  var imgs = [p1, p2, p3, p4, p5, p6];
+  for (var i = 0; i < imgs.length; i++) {
+    if (i < ammo)
+      show(imgs[i]);
+    else
+      hide(imgs[i]);
+  }
 }
 
 function tagTid() {
@@ -116,26 +112,26 @@ function visaKaniner() {
 
 function skjutInte() {
   farSkjuta = 0;
-  setTimeout("eval(farSkjuta = 1);", 800);
+  setTimeout(function(){farSkjuta=1;}, 800);
 }
 
 function traff(event) {
-  if (farSkjuta == 1 & patroner > 0) {
+  if (farSkjuta == 1 & ammo > 0) {
     skjutInte();
     event.target.style.visibility = 'hidden';
     splash(event.x, event.y);
     playSound('traff.wav');
-    gomPatron();
+    ammo--;
+    showAmmo();
     kaniner = kaniner + 1;
-  } else if (farSkjuta == 1 & patroner == 0) {
+  } else if (farSkjuta == 1 & ammo == 0) {
     playSound('click.wav');
   }
 }
 
 function slut() {
-  reload.style.visibility = 'hidden';
-  countdown.style.visibility = 'hidden';
-  results.style.visibility = 'visible';
+  hide(game);
+  show(results);
   antal.value = kaniner;
 }
 
@@ -156,11 +152,12 @@ mellankaninh.onmousedown = traff;
 bakkanin.onmousedown = traff;
 
 kaninbg.onmousedown = function() {
-  if (farSkjuta == 1 & patroner > 0) {
+  if (farSkjuta == 1 & ammo > 0) {
     playSound('miss.wav');
     skjutInte();
-    gomPatron();
-  } else if (farSkjuta == 1 & patroner <= 0) {
+    ammo--;
+    showAmmo();
+  } else if (farSkjuta == 1 & ammo <= 0) {
     playSound('click.wav');
   }
 };
@@ -169,7 +166,10 @@ reload.onmousedown = function() {
   if (farSkjuta == '1') {
     playSound('ladda.wav');
     skjutInte();
-    setTimeout("visaPatroner();", 800);
+    setTimeout(function() {
+	ammo = 6;
+	showAmmo();
+      }, 800);
   }
 };
 
