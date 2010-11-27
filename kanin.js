@@ -2,6 +2,37 @@ var farSkjuta = 1;
 var nr = 0;
 var kaniner = 0;
 
+function show(elm) {
+  elm.style.visibility = 'visible';
+}
+
+function hide(elm) {
+  elm.style.visibility = 'hidden';
+}
+
+/** Show/hide images centered at (cx, cy) with delay ms between each. */
+function animate(imgs, cx, cy, delay) {
+  var i = -1;
+  function inner() {
+    if (i >= 0)
+      hide(imgs[i]);
+    i++;
+    if (i < imgs.length) {
+      var img = imgs[i];
+      img.style.left = Math.floor(cx - img.width/2)+'px';
+      img.style.top = Math.floor(cy - img.height/2)+'px';
+      show(img);
+      setTimeout(inner, delay);
+    }
+  }
+  inner();
+}
+
+/** Animate a splash of blood centered at (x, y) */
+function splash(x, y) {
+  animate([blod1, blod2, blod3], x, y, 100);
+}
+
 function playSound(fil) {
   ljud.src = fil;
 }
@@ -92,24 +123,7 @@ function traff(event) {
   if (farSkjuta == 1 & patroner > 0) {
     skjutInte();
     event.target.style.visibility = 'hidden';
-    blod1.style.left = event.x - 50 + 'px';
-    blod1.style.top = event.y - 50 + 'px';
-    blod2.style.left = event.x - 50 + 'px';
-    blod2.style.top = event.y - 50 + 'px';
-    blod3.style.left = event.x - 50 + 'px';
-    blod3.style.top = event.y - 50 + 'px';
-    ShowBlod1 = "blod1.style.visibility = 'visible';";
-    HideBlod1 = "blod1.style.visibility = 'hidden';";
-    ShowBlod2 = "blod2.style.visibility = 'visible';";
-    HideBlod2 = "blod2.style.visibility = 'hidden';";
-    ShowBlod3 = "blod3.style.visibility = 'visible';";
-    HideBlod3 = "blod3.style.visibility = 'hidden';";
-    eval(ShowBlod1);
-    setTimeout("eval(HideBlod1);", 100);
-    setTimeout("eval(ShowBlod2);", 100);
-    setTimeout("eval(HideBlod2);", 200);
-    setTimeout("eval(ShowBlod3);", 200);
-    setTimeout("eval(HideBlod3);", 300);
+    splash(event.x, event.y);
     playSound('traff.wav');
     gomPatron();
     kaniner = kaniner + 1;
@@ -125,28 +139,11 @@ function slut() {
   antal.value = kaniner;
 }
 
-function start() {
+function start(event) {
   startkanin.style.visibility = 'hidden';
-  blod1.style.left = event.x - 50 + 'px';
-  blod1.style.top = event.y - 50 + 'px';
-  blod2.style.left = event.x - 50 + 'px';
-  blod2.style.top = event.y - 50 + 'px';
-  blod3.style.left = event.x - 50 + 'px';
-  blod3.style.top = event.y - 50 + 'px';
-  ShowBlod1 = "blod1.style.visibility = 'visible';"
-  HideBlod1 = "blod1.style.visibility = 'hidden';"
-  ShowBlod2 = "blod2.style.visibility = 'visible';"
-  HideBlod2 = "blod2.style.visibility = 'hidden';"
-  ShowBlod3 = "blod3.style.visibility = 'visible';"
-  HideBlod3 = "blod3.style.visibility = 'hidden';"
-  eval(ShowBlod1);
-  setTimeout("eval(HideBlod1);", 100);
-  setTimeout("eval(ShowBlod2);", 100);
-  setTimeout("eval(HideBlod2);", 200);
-  setTimeout("eval(ShowBlod3);", 200);
-  setTimeout("eval(HideBlod3);", 300);
+  splash(event.x, event.y);
   playSound('traff.wav');
-  setTimeout("starta();", 500);
+  setTimeout(starta, 500);
   skjutInte();
 }
 
