@@ -34,6 +34,11 @@ function splash(x, y) {
   animate([blod1, blod2, blod3], x, y, 100);
 }
 
+/** Return one of the items at random */
+function choice(items) {
+  return items[Math.floor(Math.random()*items.length)];
+}
+
 function playSound(fil) {
   ljud.src = fil;
 }
@@ -43,7 +48,7 @@ function starta() {
   show(game);
   showAmmo();
   tagTid();
-  visaKaniner();
+  showBunny();
 }
 
 function showAmmo() {
@@ -65,49 +70,21 @@ function tagTid() {
   }
 }
 
-function visaKaniner() {
-  vilken = Math.random() * 60;
-  vilken = Math.round(vilken);
-  igen = Math.random() * 3000;
-  igen = Math.round(igen);
-  if (vilken < 10) {
-    stubbkanin.style.visibility = 'visible';
-    tabort = Math.random() * 600;
-    tabort = Math.round(tabort) + 400;
-    gommig = "stubbkanin.style.visibility = 'hidden';";
-    setTimeout("eval(gommig);", tabort);
-  } else if (vilken >= 10 & vilken < 20) {
-    framkaninv.style.visibility = 'visible';
-    tabort = Math.random() * 1000;
-    tabort = Math.round(tabort) + 500;
-    gommig = "framkaninv.style.visibility = 'hidden';";
-    setTimeout("eval(gommig);", tabort);
-  } else if (vilken >= 20 & vilken < 30) {
-    framkaninh.style.visibility = 'visible';
-    tabort = Math.random() * 1000;
-    tabort = Math.round(tabort) + 500;
-    gommig = "framkaninh.style.visibility = 'hidden';";
-    setTimeout("eval(gommig);", tabort);
-  } else if (vilken >=30 & vilken < 40) {
-    mellankaninv.style.visibility = 'visible';
-    tabort = Math.random() * 600;
-    tabort = Math.round(tabort) + 400;
-    gommig = "mellankaninv.style.visibility = 'hidden';";
-    setTimeout("eval(gommig);", tabort);
-  } else if (vilken >=40 & vilken < 50) {
-    mellankaninh.style.visibility = 'visible';
-    tabort = Math.random() * 600;
-    tabort = Math.round(tabort) + 400;
-    gommig = "mellankaninh.style.visibility = 'hidden';";
-    setTimeout("eval(gommig);", tabort);
-  } else if (vilken >=50 & vilken <= 60) {
-    bakkanin.style.visibility = 'visible';
-    tabort = Math.random() * 1100;
-    tabort = Math.round(tabort) + 400;
-    gommig = "bakkanin.style.visibility = 'hidden';";
-    setTimeout("eval(gommig);", tabort);
-  }
-  setTimeout("visaKaniner();", igen);
+var bunnies = document.getElementsByClassName("bunny");
+
+function showBunny() {
+  var bunny = choice(bunnies);
+
+  show(bunny);
+
+  // dataset would have been nice, but...
+  var minTime = parseInt(bunny.getAttribute("data-min-time"));
+  var maxTime = parseInt(bunny.getAttribute("data-max-time"));
+  var hideDelay = minTime + Math.round(Math.random() * (maxTime - minTime));
+  setTimeout(function() { hide(bunny); }, hideDelay);
+
+  var nextDelay = Math.round(Math.random() * 3000);
+  setTimeout(showBunny, nextDelay);
 }
 
 function skjutInte() {
@@ -118,7 +95,7 @@ function skjutInte() {
 function traff(event) {
   if (farSkjuta == 1 & ammo > 0) {
     skjutInte();
-    event.target.style.visibility = 'hidden';
+    hide(event.target);
     splash(event.x, event.y);
     playSound('traff.wav');
     ammo--;
@@ -132,11 +109,11 @@ function traff(event) {
 function slut() {
   hide(game);
   show(results);
-  antal.value = kaniner;
+  //antal.value = kaniner;
 }
 
 function start(event) {
-  startkanin.style.visibility = 'hidden';
+  hide(startkanin);
   splash(event.x, event.y);
   playSound('traff.wav');
   setTimeout(starta, 500);
@@ -174,5 +151,5 @@ reload.onmousedown = function() {
 };
 
 window.onload = function() {
-  startkanin.style.visibility = 'visible';
+  show(startkanin);
 };

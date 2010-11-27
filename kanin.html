@@ -34,14 +34,21 @@ OBS! Den syns inte förrens alla filer är laddade!
 <img src="kaninbg.gif" id="kaninbg">
 
 <!-- bunnies -->
-<img class="bunny" src="stubbkanin.gif" id="stubbkanin" style="left:114px;top:329px;">
-<img class="bunny" src="bakkanin.gif" id="bakkanin" style="left:219px;top:166px;">
-<img class="bunny" src="mellankaninv.gif" id="mellankaninv" style="left:28px;top:254px;">
-<img class="bunny" src="mellankaninh.gif" id="mellankaninh" style="left:109px;top:239px;">
-<img class="bunny" src="framkaninv.gif" id="framkaninv" style="left:262px;top:341px;">
-<img class="bunny" src="framkaninh.gif" id="framkaninh" style="left:372px;top:309px;">
+<img class="bunny" src="stubbkanin.gif" id="stubbkanin" style="left:114px;top:329px;"
+     data-min-time="400" data-max-time="1000">
+<img class="bunny" src="bakkanin.gif" id="bakkanin" style="left:219px;top:166px;"
+     data-min-time="400" data-max-time="1500">
+<img class="bunny" src="mellankaninv.gif" id="mellankaninv" style="left:28px;top:254px;"
+     data-min-time="400" data-max-time="1000">
+<img class="bunny" src="mellankaninh.gif" id="mellankaninh" style="left:109px;top:239px;"
+     data-min-time="400" data-max-time="1000">
+<img class="bunny" src="framkaninv.gif" id="framkaninv" style="left:262px;top:341px;"
+     data-min-time="500" data-max-time="1500">
+<img class="bunny" src="framkaninh.gif" id="framkaninh" style="left:372px;top:309px;"
+     data-min-time="500" data-max-time="1500">
 
 <!-- rifle cartridges -->
+<!-- FIXME: <meter> would be suitable if it could be styled -->
 <img class="ammo" src="patron.gif" id="p6" style="top:440px;left:420px;">
 <img class="ammo" src="patron.gif" id="p5" style="top:440px;left:432px;">
 <img class="ammo" src="patron.gif" id="p4" style="top:440px;left:444px;">
@@ -50,14 +57,15 @@ OBS! Den syns inte förrens alla filer är laddade!
 <img class="ammo" src="patron.gif" id="p1" style="top:440px;left:480px;">
 
 <!-- blood -->
-<img class="blood" src="blod1.gif" id="blod1" style="top:0px;left:0px;">
-<img class="blood" src="blod2.gif" id="blod2" style="top:0px;left:0px;">
-<img class="blood" src="blod3.gif" id="blod3" style="top:0px;left:0px;">
+<img class="blood" src="blod1.gif" id="blod1">
+<img class="blood" src="blod2.gif" id="blod2">
+<img class="blood" src="blod3.gif" id="blod3">
 
 <!-- reload -->
 <button id="reload">- Ladda Om -</button>
 
 <!-- countdown -->
+<!-- FIXME: <progress> would be suitable if it could be styled -->
 <div id="countdown"><div id="progress"></div></div>
 
 </div>
