@@ -1,7 +1,7 @@
-var farSkjuta = 1;
-var nr = 0;
-var kaniner = 0;
+var time = 0;
+var frags = 0;
 var ammo = 6;
+var allowShoot = true;
 
 function show(elm) {
   elm.style.display = 'block';
@@ -15,8 +15,9 @@ function hide(elm) {
 function animate(imgs, cx, cy, delay) {
   var i = -1;
   function inner() {
-    if (i >= 0)
+    if (i >= 0) {
       hide(imgs[i]);
+    }
     i++;
     if (i < imgs.length) {
       var img = imgs[i];
@@ -43,106 +44,110 @@ function playSound(fil) {
   ljud.src = fil;
 }
 
-function starta() {
-  hide(introduction);
-  show(game);
-  showAmmo();
-  tagTid();
-  showBunny();
-}
-
 function showAmmo() {
-  var imgs = [p1, p2, p3, p4, p5, p6];
-  for (var i = 0; i < imgs.length; i++) {
-    if (i < ammo)
+  var imgs, i;
+  imgs = [p1, p2, p3, p4, p5, p6];
+  for (i = 0; i < imgs.length; i++) {
+    if (i < ammo) {
       show(imgs[i]);
-    else
+    } else {
       hide(imgs[i]);
+    }
   }
 }
 
-function tagTid() {
-  progress.style.width = nr+"%";
-  if (nr++ < 100) {
-    setTimeout(tagTid, 1000);
+function tick() {
+  progress.style.width = time+"%";
+  if (time++ < 100) {
+    setTimeout(tick, 1000);
   } else {
-    slut();
+    endGame();
   }
 }
 
 var bunnies = document.getElementsByClassName("bunny");
 
 function showBunny() {
-  var bunny = choice(bunnies);
+  var bunny, minTime, maxTime, hideDelay, nextDelay;
 
+  bunny = choice(bunnies);
   show(bunny);
 
   // dataset would have been nice, but...
-  var minTime = parseInt(bunny.getAttribute("data-min-time"));
-  var maxTime = parseInt(bunny.getAttribute("data-max-time"));
-  var hideDelay = minTime + Math.round(Math.random() * (maxTime - minTime));
+  minTime = parseInt(bunny.getAttribute("data-min-time"), 10);
+  maxTime = parseInt(bunny.getAttribute("data-max-time"), 10);
+  hideDelay = minTime + Math.round(Math.random() * (maxTime - minTime));
   setTimeout(function() { hide(bunny); }, hideDelay);
 
-  var nextDelay = Math.round(Math.random() * 3000);
+  nextDelay = Math.round(Math.random() * 3000);
   setTimeout(showBunny, nextDelay);
 }
 
-function skjutInte() {
-  farSkjuta = 0;
-  setTimeout(function(){farSkjuta=1;}, 800);
+function startGame() {
+  hide(introduction);
+  show(game);
+  showAmmo();
+  tick();
+  showBunny();
 }
 
-function traff(event) {
-  if (farSkjuta == 1 & ammo > 0) {
-    skjutInte();
-    hide(event.target);
-    splash(event.x, event.y);
-    playSound('traff.wav');
-    ammo--;
-    showAmmo();
-    kaniner = kaniner + 1;
-  } else if (farSkjuta == 1 & ammo == 0) {
-    playSound('click.wav');
+function endGame() {
+  hide(game);
+  show(results);
+}
+
+function dontShoot() {
+  allowShoot = false;
+  setTimeout(function() { allowShoot = true; }, 800);
+}
+
+function shoot(event) {
+  if (allowShoot) {
+    if (ammo > 0) {
+      dontShoot();
+      hide(event.target);
+      splash(event.x, event.y);
+      playSound('traff.wav');
+      ammo--;
+      showAmmo();
+      frags++;
+    } else {
+      playSound('click.wav');
+    }
   }
 }
 
-function slut() {
-  hide(game);
-  show(results);
-  //antal.value = kaniner;
-}
-
-function start(event) {
+startkanin.onmousedown = function() {
   hide(startkanin);
   splash(event.x, event.y);
   playSound('traff.wav');
-  setTimeout(starta, 500);
-  skjutInte();
-}
+  setTimeout(startGame, 500);
+};
 
-startkanin.onmousedown = start;
-stubbkanin.onmousedown = traff;
-framkaninv.onmousedown = traff;
-framkaninh.onmousedown = traff;
-mellankaninv.onmousedown = traff;
-mellankaninh.onmousedown = traff;
-bakkanin.onmousedown = traff;
+stubbkanin.onmousedown = shoot;
+framkaninv.onmousedown = shoot;
+framkaninh.onmousedown = shoot;
+mellankaninv.onmousedown = shoot;
+mellankaninh.onmousedown = shoot;
+bakkanin.onmousedown = shoot;
 
 kaninbg.onmousedown = function() {
-  if (farSkjuta == 1 & ammo > 0) {
-    playSound('miss.wav');
-    skjutInte();
-    ammo--;
-    showAmmo();
-  } else if (farSkjuta == 1 & ammo <= 0) {
-    playSound('click.wav');
+  if (allowShoot) {
+    if (ammo > 0) {
+      playSound('miss.wav');
+      dontShoot();
+      ammo--;
+      showAmmo();
+    } else {
+      playSound('click.wav');
+    }
   }
 };
 
 reload.onmousedown = function() {
-  if (farSkjuta == '1') {
+  if (allowShoot) {
     playSound('ladda.wav');
-    skjutInte();
+    dontShoot();
     setTimeout(function() {
 	ammo = 6;
 	showAmmo();
