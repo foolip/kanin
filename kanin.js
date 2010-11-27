@@ -9,7 +9,7 @@ function playSound(fil) {
 function starta() {
   kaninbg.style.visibility = 'visible';
   reload.style.visibility = 'visible';
-  tid.style.visibility = 'visible';
+  countdown.style.visibility = 'visible';
   visaPatroner();
   tagTid();
   visaKaniner();
@@ -32,12 +32,10 @@ function gomPatron() {
 }
 
 function tagTid() {
-  if (nr < 99) {
-    eval("s" + nr + ".className='tdColorOn'");
-    nr = nr + 1;
-    setTimeout("tagTid();", 1000);
+  progress.style.width = nr+"%";
+  if (nr++ < 100) {
+    setTimeout(tagTid, 1000);
   } else {
-    eval("s" + nr + ".className='tdColorOn'");
     slut();
   }
 }
@@ -124,7 +122,7 @@ function traff(event) {
 
 function slut() {
   reload.style.visibility = 'hidden';
-  tid.style.visibility = 'hidden';
+  countdown.style.visibility = 'hidden';
   resultat.style.visibility = 'visible';
   skickaruta.style.visibility = 'visible';
   document.forms[0].elements[1].value = kaniner;
