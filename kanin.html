@@ -6,11 +6,6 @@
 <link rel="stylesheet" href="kanin.css">
 </head>
 <body>
-<bgsound id="ljud">
-<bgsound src="traff.wav" volume="-10000" loop=1>
-<bgsound src="miss.wav" volume="-10000" loop=1>
-<bgsound src="ladda.wav" volume="-10000" loop=1>
-<bgsound src="click.wav" volume="-10000" loop=1>
 
 <!-- introduction -->
 <div class="box" id="introduction">
@@ -81,10 +76,16 @@ du kom med på High-Score listan.
 </form>
 </div>
 
-<!-- blood -->
+<!-- blood animation frames -->
 <img class="blood" src="blod1.gif" id="blod1">
 <img class="blood" src="blod2.gif" id="blod2">
 <img class="blood" src="blod3.gif" id="blod3">
+
+<!-- sound effects -->
+<audio id="frag" src="traff.wav" preload="auto"></audio>
+<audio id="miss" src="miss.wav" preload="auto"></audio>
+<audio id="load" src="ladda.wav" preload="auto"></audio>
+<audio id="click" src="click.wav" preload="auto"></audio>
 
 <script src="kanin.js"></script>
 </body>

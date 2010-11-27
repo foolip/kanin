@@ -40,8 +40,20 @@ function choice(items) {
   return items[Math.floor(Math.random()*items.length)];
 }
 
-function playSound(fil) {
-  ljud.src = fil;
+var playSound;
+if (document.createElement("audio").play) {
+  playSound = function(id) {
+    var a = document.getElementById(id);
+    try {
+      a.currentTime = 0;
+    } catch (ex) {
+      // ugh, setting currentTime can throw
+    }
+    a.play();
+  }
+} else {
+  /* FIXME: try <bgsound> and Audio() */
+  playSound = function(id) { }
 }
 
 function showAmmo() {
@@ -107,12 +119,12 @@ function shoot(event) {
       dontShoot();
       hide(event.target);
       splash(event.x, event.y);
-      playSound('traff.wav');
+      playSound('frag');
       ammo--;
       showAmmo();
       frags++;
     } else {
-      playSound('click.wav');
+      playSound('click');
     }
   }
 }
@@ -120,7 +132,7 @@ function shoot(event) {
 startkanin.onmousedown = function() {
   hide(startkanin);
   splash(event.x, event.y);
-  playSound('traff.wav');
+  playSound('frag');
   setTimeout(startGame, 500);
 };
 
@@ -134,19 +146,19 @@ bakkanin.onmousedown = shoot;
 kaninbg.onmousedown = function() {
   if (allowShoot) {
     if (ammo > 0) {
-      playSound('miss.wav');
+      playSound('miss');
       dontShoot();
       ammo--;
       showAmmo();
     } else {
-      playSound('click.wav');
+      playSound('click');
     }
   }
 };
 
 reload.onmousedown = function() {
   if (allowShoot) {
-    playSound('ladda.wav');
+    playSound('load');
     dontShoot();
     setTimeout(function() {
 	ammo = 6;
