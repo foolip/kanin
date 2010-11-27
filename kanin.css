@@ -8,7 +8,7 @@ body {
 }
 
 .box {
-  visibility: hidden;
+  display: none;
   position: absolute;
   border: 1px solid white;
   background: #102040;
@@ -22,7 +22,7 @@ body {
 /* introduction */
 
 #introduction {
-  visibility: visible;
+  display: block;
   font-size: 10px;
   text-align: left;
 }
@@ -33,14 +33,14 @@ body {
   height: 532px;
 }
 
-#game img {
+#kaninbg {
   display: block;
   margin: 0;
 }
 
 .bunny, .ammo, .blood {
   position: absolute;
-  visibility: hidden;
+  display: none;
 }
 
 .bunny {
@@ -56,7 +56,7 @@ body {
 }
 
 #startkanin {
- visibility: hidden;
+ display: none;
  position: absolute;
  left: 145px;
  top: 185px;
@@ -91,10 +91,6 @@ body {
 }
 
 /* results */
-
-#results {
-  visibility: hidden;
-}
 
 #submit {
   border: 1px outset white;

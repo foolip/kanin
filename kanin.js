@@ -4,11 +4,11 @@ var kaniner = 0;
 var ammo = 6;
 
 function show(elm) {
-  elm.style.visibility = 'visible';
+  elm.style.display = 'block';
 }
 
 function hide(elm) {
-  elm.style.visibility = 'hidden';
+  elm.style.display = 'none';
 }
 
 /** Show/hide images centered at (cx, cy) with delay ms between each. */
