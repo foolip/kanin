@@ -24,9 +24,9 @@ var results = document.getElementById("results");
 (function () {
   var elems = document.getElementsByTagName("*");
   for (var i = 0; i < elems.length; i++) {
-    var sprite = elems[i].getAttribute("class");
-    if (sprite in sprites) {
-      sprites[sprite].push(elems[i]);
+    var spriteClass = elems[i].className;
+    if (spriteClass in sprites) {
+      sprites[spriteClass].push(elems[i]);
     }
   }
 })();
@@ -59,8 +59,8 @@ function animate(imgs, cx, cy, delay) {
 }
 
 /** Animate a splash of blood centered at the event coordinates. */
-function splash(event) {
-  animate(sprites.blood, event.clientX, event.clientY, 100);
+function splash(e) {
+  animate(sprites.blood, e.clientX, e.clientY, 100);
 }
 
 /** Return one of the items at random */
@@ -155,12 +155,14 @@ function dontShoot() {
   setTimeout(function() { allowShoot = true; }, 800);
 }
 
-function shoot(event) {
+function shoot(e) {
+  if (!e) e = window.event; // IE rocks
+  if (!e.target) e.target = e.srcElement; // IE rocks again
   if (allowShoot) {
     if (ammo > 0) {
       dontShoot();
-      hide(event.target);
-      splash(event);
+      hide(e.target);
+      splash(e);
       playSound('frag');
       ammo--;
       showAmmo();
@@ -171,9 +173,10 @@ function shoot(event) {
   }
 }
 
-startkanin.onmousedown = function(event) {
+startkanin.onmousedown = function(e) {
+  if (!e) e = window.event; // IE rocks
   hide(startkanin);
-  splash(event);
+  splash(e);
   playSound('frag');
   setTimeout(startGame, 500);
 };
