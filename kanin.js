@@ -32,11 +32,11 @@ var results = document.getElementById("results");
 })();
 
 function show(elm) {
-  elm.style.display = 'block';
+  elm.style.visibility = 'visible';
 }
 
 function hide(elm) {
-  elm.style.display = 'none';
+  elm.style.visibility = 'hidden';
 }
 
 /** Show/hide images centered at (cx, cy) with delay ms between each. */
