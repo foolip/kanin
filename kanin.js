@@ -9,6 +9,16 @@ var sprites = {
   blood: []
 };
 
+// Firefox compat, other browsers automatically make these available
+// on the window object, or some such...
+var introduction = document.getElementById("introduction");
+var game = document.getElementById("game");
+var startkanin = document.getElementById("startkanin");
+var kaninbg = document.getElementById("kaninbg");
+var reload = document.getElementById("reload");
+var progress = document.getElementById("progress");
+var results = document.getElementById("results");
+
 // populate sprites without using querySelector or
 // getElementsByClassName, as neither works in IE6.
 (function () {
@@ -48,9 +58,9 @@ function animate(imgs, cx, cy, delay) {
   inner();
 }
 
-/** Animate a splash of blood centered at (x, y) */
-function splash(x, y) {
-  animate(sprites.blood, x, y, 100);
+/** Animate a splash of blood centered at the event coordinates. */
+function splash(event) {
+  animate(sprites.blood, event.clientX, event.clientY, 100);
 }
 
 /** Return one of the items at random */
@@ -150,7 +160,7 @@ function shoot(event) {
     if (ammo > 0) {
       dontShoot();
       hide(event.target);
-      splash(event.x, event.y);
+      splash(event);
       playSound('frag');
       ammo--;
       showAmmo();
@@ -161,9 +171,9 @@ function shoot(event) {
   }
 }
 
-startkanin.onmousedown = function() {
+startkanin.onmousedown = function(event) {
   hide(startkanin);
-  splash(event.x, event.y);
+  splash(event);
   playSound('frag');
   setTimeout(startGame, 500);
 };
@@ -172,7 +182,6 @@ startkanin.onmousedown = function() {
   var i;
   for (i = 0; i < sprites.bunny.length; i++)
     sprites.bunny[i].onmousedown = shoot;
-  sprites.bunny
 })();
 
 kaninbg.onmousedown = function() {

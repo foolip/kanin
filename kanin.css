@@ -43,9 +43,7 @@ p {
 
 #startkanin {
   display: none;
-  position: absolute;
-  left: 145px;
-  top: 185px;
+  margin: 20px auto;
   cursor: crosshair;
 }
 
