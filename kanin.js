@@ -60,7 +60,11 @@ function animate(imgs, cx, cy, delay) {
 
 /** Animate a splash of blood centered at the event coordinates. */
 function splash(e) {
-  animate(sprites.blood, e.clientX, e.clientY, 100);
+  if (e.pageX == undefined) { // IE rocks
+    e.pageX = e.clientX + document.documentElement.scrollLeft;
+    e.pageY = e.clientY + document.documentElement.scrollTop;
+  }
+  animate(sprites.blood, e.pageX, e.pageY, 100);
 }
 
 /** Return one of the items at random */
