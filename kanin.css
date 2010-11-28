@@ -106,6 +106,10 @@ p {
 
 /* results */
 
+#results {
+  background: #102040 url(slutkanin.gif) no-repeat 50% 75%;
+}
+
 #submit {
   border: 1px outset white;
   color: white;
