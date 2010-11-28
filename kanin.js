@@ -3,6 +3,24 @@ var frags = 0;
 var ammo = 6;
 var allowShoot = true;
 
+var sprites = {
+  bunny: [],
+  ammo: [],
+  blood: []
+};
+
+// populate sprites without using querySelector or
+// getElementsByClassName, as neither works in IE6.
+(function () {
+  var elems = document.getElementsByTagName("*");
+  for (var i = 0; i < elems.length; i++) {
+    var sprite = elems[i].getAttribute("class");
+    if (sprite in sprites) {
+      sprites[sprite].push(elems[i]);
+    }
+  }
+})();
+
 function show(elm) {
   elm.style.display = 'block';
 }
@@ -32,7 +50,7 @@ function animate(imgs, cx, cy, delay) {
 
 /** Animate a splash of blood centered at (x, y) */
 function splash(x, y) {
-  animate([blod1, blod2, blod3], x, y, 100);
+  animate(sprites.blood, x, y, 100);
 }
 
 /** Return one of the items at random */
@@ -74,13 +92,12 @@ if (document.createElement("audio").play) {
 }
 
 function showAmmo() {
-  var imgs, i;
-  imgs = [p1, p2, p3, p4, p5, p6];
-  for (i = 0; i < imgs.length; i++) {
+  var i;
+  for (i = 0; i < sprites.ammo.length; i++) {
     if (i < ammo) {
-      show(imgs[i]);
+      show(sprites.ammo[i]);
     } else {
-      hide(imgs[i]);
+      hide(sprites.ammo[i]);
     }
   }
 }
@@ -94,12 +111,10 @@ function tick() {
   }
 }
 
-var bunnies = document.getElementsByClassName("bunny");
-
 function showBunny() {
   var bunny, minTime, maxTime, hideDelay, nextDelay;
 
-  bunny = choice(bunnies);
+  bunny = choice(sprites.bunny);
   show(bunny);
 
   // dataset would have been nice, but...
@@ -153,12 +168,12 @@ startkanin.onmousedown = function() {
   setTimeout(startGame, 500);
 };
 
-stubbkanin.onmousedown = shoot;
-framkaninv.onmousedown = shoot;
-framkaninh.onmousedown = shoot;
-mellankaninv.onmousedown = shoot;
-mellankaninh.onmousedown = shoot;
-bakkanin.onmousedown = shoot;
+(function() {
+  var i;
+  for (i = 0; i < sprites.bunny.length; i++)
+    sprites.bunny[i].onmousedown = shoot;
+  sprites.bunny
+})();
 
 kaninbg.onmousedown = function() {
   if (allowShoot) {
