@@ -42,6 +42,7 @@ function choice(items) {
 
 var playSound;
 if (document.createElement("audio").play) {
+  // Use HTML5 <audio>
   playSound = function(id) {
     var a = document.getElementById(id);
     try {
@@ -50,10 +51,26 @@ if (document.createElement("audio").play) {
       // ugh, setting currentTime can throw
     }
     a.play();
+  };
+} else if (document.createElement("bgsound").loop) {
+  // Use IE <bgsound>
+  var elems = document.getElementsByTagName("audio");
+  for (var i = elems.length - 1; i >= 0; i--) {
+    var audio = elems[i];
+    var bgsound = document.createElement("bgsound");
+    bgsound.volume = -10000;
+    bgsound.src = audio.getAttribute("src");
+    bgsound.id = audio.id;
+    audio.parentNode.replaceChild(bgsound, audio);
   }
+  playSound = function(id) {
+    var bgsound = document.getElementById(id);
+    bgsound.volume = 0;
+    bgsound.src = bgsound.src;
+  };
 } else {
-  /* FIXME: try <bgsound> and Audio() */
-  playSound = function(id) { }
+  // No sound for you!
+  playSound = function(id) {};
 }
 
 function showAmmo() {
