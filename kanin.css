@@ -39,6 +39,7 @@ p {
   visibility: visible;
   font-size: 10px;
   text-align: left;
+  z-index: 0;
 }
 
 #startkanin {
@@ -53,6 +54,7 @@ p {
 #game {
   height: 532px;
   cursor: crosshair;
+  z-index: 1;
 }
 
 #kaninbg {
@@ -109,6 +111,7 @@ p {
 
 #results {
   background: #102040 url(slutkanin.gif) no-repeat 50% 75%;
+  z-index: 5;
 }
 
 #submit {
